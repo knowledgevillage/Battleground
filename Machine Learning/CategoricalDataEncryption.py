@@ -33,7 +33,7 @@ X[:,1:3]=imputer_X.transform(X[:,1:3])
 #categorial Data encoding
 
 # Label encocder is the  is class It is used to endoce the lebel(i.e. non-numercial ctegories with values form 0 to n_classes-1)
-#creating an obejct ofr label encoder
+#creating an obejct of label encoder
 labelecoder_X= le()
 X[:,0]=labelecoder_X.fit_transform(X[:,0])
 
@@ -55,7 +55,7 @@ X=onehotencoder_X.fit_transform(X).toarray()
 #above code have create n columns for N categories.
 
 #applying label encoder for Y object i.e. pruchsed indicatior
-
+#crreating object of label encoder
 labelencoder_Y=le()
 Y=labelencoder_Y.fit_transform(Y)
 
