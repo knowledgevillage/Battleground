@@ -81,3 +81,20 @@ print("************************* Print the  test datasets **********************
 print(test_X)
 
 print(test_Y)
+
+
+""" We will make use of StandardScaler class of preprocessing module to perform the feature scaling
+"""
+from sklearn.preprocessing import StandardScaler 
+sc=StandardScaler()   								# create object for feature Standered Scaler class
+train_X[:, 3:]=sc.fit_transform( train_X[:,3:]) # since we have to perform the feature scaling on the actual data not in dummy data(i.e. encoded columns), so we will specify the column loccations
+"""
+In above code fit method will calcualte the value usinf stadard deviation formula on training dataset, tranform will execute the logi and will replace tha values.
+Since we are goint to apply same tranformation on test set, these tranfomration into test set. If we again calcualte these values then we will get another factor accroding 
+to new dataset for standard deviation feature methodolgy. So to mentain the consistency we will calcualte the factor once only once using training dataset and will'
+use the same factor for all the dataset coming forth using transform method. A we have used trandform method below
+"""
+test_X[:,3:]=sc.transform(test_X[:,3:])
+print(train_X)
+
+print(test_X)
