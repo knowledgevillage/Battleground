@@ -13,7 +13,7 @@ try:
     print(init_number)
     reverse_number=0
     while init_number !=0:
-        reverse_number=init_number%10+reverse_number*10
+        reverse_number=init_number%10+reverse_number*10 
         init_number=init_number//10
     print("the reversed number is ",reverse_number)
 except ValueError:
