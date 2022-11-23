@@ -5,4 +5,4 @@ print(os.listdir())
 print(os.getcwd())
 #pd.read_csv('test_big_mart.csv')
 
-#pd.describe_option()
+pd.describe_option()
