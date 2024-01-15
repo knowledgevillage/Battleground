@@ -36,3 +36,15 @@ plot(x)
 a=10
 A=10
 
+##Varialbes in R programming
+
+var.1 <- c(0,1,2,6)
+print(var.1)
+
+
+
+
+#Data Types in R
+
+
+
