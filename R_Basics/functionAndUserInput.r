@@ -60,3 +60,43 @@ new.function2 <- function(x=3,y=6,z=10)
 new.function2()
 
 new.function2(10,45,68)
+
+
+
+#built-in functions
+
+#abs()
+#sqrt() - square root function
+#floor()
+#ceiling()
+#trunc()
+x<- c(5.6, 8,60)
+print(abs(x))
+print(sqrt(x))
+print(floor(x))
+print(ceiling(x))
+print(trunc(x))
+
+print(sin(x))
+print(log(x))
+print(exp(x))
+
+
+
+a<-"Todayis07022024LetscheckwhatArebigNews Today"
+print(substr(a,4,9))
+print(toupper(a))
+
+#patern serchgin
+s1<-c('abcd', 'abcade', 'abdbcae')
+pat<-'^abc'
+print(grep(pat,s1))
+
+
+
+a1<-c(1:10, 40)
+print(a1)
+print(sum(a1))
+
+print(min(a1))
+print(max(a1))
