@@ -36,3 +36,24 @@ d
 
 e<-seq(1,8,length.out = 5) #length.out is used to define the number of output element. interval will be be calcualed by r directly. 
 e
+
+
+
+
+#numeric vector
+numv <- c(12.3, 526,45.78, 4567.9)
+numv
+class(numv)
+
+
+#integer vector
+
+intv <- c(12,346,24,765)
+intv
+class(intv)
+
+#converting numeric vector data type to integer
+intv1 <- as.integer(intv)
+class(intv1)
+
+
