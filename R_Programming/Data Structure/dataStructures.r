@@ -1,3 +1,4 @@
+
 # # Datastructures in R
 # #vector
 # matrix
@@ -57,3 +58,18 @@ intv1 <- as.integer(intv)
 class(intv1)
 
 
+# Character Vector
+charv <- c(1,4,5,7,9,10)
+print(charv)
+class(charv)
+charvv <- as.character(charv)
+class(charvv)
+charvv
+
+
+#logical vector --> A logical vector is a vector that only contains TRUE and FALSE values.
+
+
+#Accessing Elements of vector
+#by indexing []
+# in R indesxing starts from 1 not 0
