@@ -73,3 +73,20 @@ charvv
 #Accessing Elements of vector
 #by indexing []
 # in R indesxing starts from 1 not 0
+
+
+#lets creat a sequence for accessing elements
+
+seq1 <- seq(1,20, by =4)
+seq1
+seq1[5]
+
+#lets create character vector with indexing
+char_c <- c("ram"=2, "shyam"=32,"vishnu"=56)
+char_c
+
+char_c[2]
+char_c["2"]
+
+
+#Vector Opratoins
