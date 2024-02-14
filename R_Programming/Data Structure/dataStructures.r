@@ -16,3 +16,31 @@
 # # type of Vector
 # 1 --> Atomic vector
 # 2 --> list
+
+
+#how to create a vector
+
+# Method 1 --> using c function
+
+a <- c(1,23,45,144,67)
+a
+
+#Method 2 --> using : oprator
+b<- -3:5
+b
+
+
+#Method 3 --> using seq function
+
+c <- seq(1,5)
+c
+
+  #lets add steps or gaps in the sequence
+d <- seq(1,5, by =.4)
+d
+
+
+
+  #we can use length.out insted of by 
+e <- seq(1,4, length.out = 12)
+e
