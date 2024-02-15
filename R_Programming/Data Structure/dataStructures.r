@@ -92,3 +92,18 @@ class(charvv)
 
 
 # Accessing Vector Elements
+# by indexing
+# in R programming the indexing starts from 1.
+
+# why does R programming indexing starts with 1
+# This is because these programming languages are used by Mathematicians who are not familiar using 0 index as index 1 is more natural. For example, the first element in the set is referred as 1 without any confusion.
+# vectors in R start with element '1' because element '0' is always 'null', so there's never any reason to reference it
+#For more detail find the link below for refrence 
+# https://medium.com/@pi3832/why-does-r-start-counting-at-1-instead-of-0-cf4f6ba2362e#:~:text=This%20is%20how%20I%20prefer,any%20reason%20to%20reference%20it.
+
+
+vec_acc <- seq(1,9, length.out = 20)
+vec_acc
+
+vec_acc[1]
+vec_acc[0] # this will return numeric(0) numric is a vetor type 0 because there is no such element
