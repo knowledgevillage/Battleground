@@ -44,3 +44,51 @@ d
   #we can use length.out insted of by 
 e <- seq(1,4, length.out = 12)
 e
+
+
+#atomic vector is of 4 types 
+# 1 - Numeric Vector
+
+numv <- c(1,2.3,5,6,7,8.9)
+numv
+class(numv)
+
+
+# 2 - integer vector
+#there are two ways to create integer vector. 
+#i - keep L with each elements of vector. If you give any values with decimal then vector will converte into numeric vector.
+intv1 <- c(1L,2L,3L, 5L)
+intv1
+class(intv1)
+
+
+#ii -  convert a numric vector into Integer vector
+intv2 <- seq(1,28, by=2 )
+intv2 
+class(intv2)
+intv2<- as.integer(intv2)
+class(intv2)
+
+
+
+# 3 - character vector
+charv <- c(1,5,8,7)
+charv
+class(charv)
+charv <- as.character(charv)
+class(charv)
+charv
+
+charvv <- c("ram", "shyam", "tulsi")
+charvv
+class(charvv)
+
+
+# 4 Logical vector
+#vector with true and false will be  known as logical vector. numbers can be converted into logical vector
+
+
+
+
+
+# Accessing Vector Elements
