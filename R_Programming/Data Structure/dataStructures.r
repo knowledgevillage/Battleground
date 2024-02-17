@@ -107,3 +107,55 @@ vec_acc
 
 vec_acc[1]
 vec_acc[0] # this will return numeric(0) numric is a vetor type 0 because there is no such element
+
+#accessing character vector
+char_vec <- c("ram"=12, "shyam"=32, "mohan"=31)
+char_vec
+
+char_vec["shyam"]
+
+
+# accessing elelments in logical vector
+a1 <- c(1,4,6,7,8)
+a2 <- a1 [c(TRUE, FALSE, TRUE, TRUE, FALSE)]
+
+
+a1
+a2
+
+
+
+# Vector oprations
+
+aop1 <- c(1,2,3,4,5,6,7,8)
+aop2 <- c("ram", "shyam", "lala", "kala")
+
+aop3 <- c(aop1, aop2)
+aop1
+aop2
+aop3
+
+aop4 <- c(5,6,7,8,9,4,12,46)
+
+
+aop1+aop4
+aop1-aop4
+aop1*aop4
+aop1/aop4
+
+aop2[2]
+aop2[12]
+aop2[-2] # negative value will be converted into absolute value. hence eexcept 2 index all values will be printed.
+aop2[2:4]
+aop2[2,3] # this will give error Error in aop2[2, 3] : incorrect number of dimensions. To do this i have to mention values in vector
+aop2[c(2,3)]
+aop2[c(2,3,2)] # duplicate indexing is allowed. index 2 value will be printed twice.
+
+
+
+
+# namving of vector
+z<- c("ram", "shyam", "lala", "kala")
+names(z) <- c("y1", 'y2', 'y3')
+z
+z['y1']
