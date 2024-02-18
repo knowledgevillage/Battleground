@@ -1,0 +1,49 @@
+---
+title: "List in R Data statucture"
+output: html_notebook
+---
+
+#### Definitin of List in R
+A list in R is a generic object consisting of an ordered collection of objects. **Lists are one-dimensional, heterogeneous data structures.** The list can be a list of vectors, a list of matrices, a list of characters and a list of functions, and so on.
+
+**A list is actually still a vector in R, but it's not an atomic vector. We construct a list explicitly with list() but, like atomic vectors, most lists are created some other way in real life.**
+
+we use c() to create a vector but to create a list we use list() in r
+
+##### **Lets create list with vector**
+
+
+```{r}
+# lets create a vector
+
+vec <- c(8,9,10)
+char_vec <- c("ram", "shyam", "lala", "kala")
+logic_vec <- c(TRUE, FALSE, TRUE)
+
+list1 <- list(vec, char_vec, logic_vec)
+list1
+```
+
+##### **Lets create list method 2**
+```{r}
+list2 <- list(1,2,3,4,5, "ram", "shyam", c(9,8,7), 52L, 86,7)
+list2
+```
+
+##### **Naming of List**
+
+```{r}
+list3 <- list(c("ram", "mohan", "sohan"), c(56,89,78), list("btech", "bsc", "ba"))
+list3
+
+names(list3) <- c("student", "marks", "courses")
+
+list3
+
+```
+##### **Accessing the list**
+
+```{r}
+
+```
+
