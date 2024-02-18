@@ -1,4 +1,4 @@
----
+*---
 title: "List in R Data statucture"
 output: html_notebook
 ---
@@ -41,9 +41,20 @@ names(list3) <- c("student", "marks", "courses")
 list3
 
 ```
-##### **Accessing the list**
+##### **Accessing the list by indexing**
 
 ```{r}
-
+print(list3[3])
 ```
+##### **Accessing the list by name**
+```{r}
+print(list3["student"])
+```
+##### **Accessing the list by $**
+```{r}
+print(list3$marks)
+```
+**Arithmatice oprations are not possible in list directly so we convert them into vector. To convert list into vector we use unlist function**
+this unlist function will convert a list into vector
+
 
