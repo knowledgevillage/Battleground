@@ -1,0 +1,36 @@
+---
+title: "Vector function in R"
+output: html_notebook
+---
+
+#### **Built-in vector functions**
+
+##### **rep() - is used to repeat the sequence or values of vector**
+
+```{r}
+rep(c(2,3,4), time=4)
+rep
+
+```
+
+**If i want to repeat the values only rather then entire program. this is how we weill do it**
+```{r}
+rep(c(2,3,4), each =4)
+```
+
+**if time is given with vector then element will be number of times the value of vector value for that place. see below. But in this case both vector should be having same number of elements**
+
+```{r}
+rep(c(2,3,4), time=c(5,6,7))
+```
+
+**length.out with rep function**
+```{r}
+rep(1:4, length.out=8)
+```
+
+##### **seq() -  function in R Programming Language is used to create a sequence of elements in a Vector. It takes the length and difference between values as an optional argument. **
+```{r}
+seq(from=3.5, to =1.5, by <- -.5)
+```
+

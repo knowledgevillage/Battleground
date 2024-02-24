@@ -15,7 +15,7 @@
 # length --> used to fined the number of elements in a vector
 # # type of Vector
 # 1 --> Atomic vector
-# 2 --> list
+# 2 --> listmpx
 
 
 #how to create a vector
