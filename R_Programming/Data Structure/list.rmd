@@ -57,4 +57,25 @@ print(list3$marks)
 **Arithmatice oprations are not possible in list directly so we convert them into vector. To convert list into vector we use unlist function**
 this unlist function will convert a list into vector
 
+```{r}
+list4 <- list(5:9)
+list4
+list5 <- list(14:18)
+list5
 
+v1 <- unlist(list4)
+v1
+v2 <- unlist(list5)
+v2
+
+class(v1)
+class(v2)
+res <- v1+v2 #this will give error longer object length is not a multiple of shorter object length. lef length of both list are not same
+res
+
+```
+##### **Mergeing of list**
+```{r}
+mer <- list(list4, list5)
+mer
+```
