@@ -8,9 +8,74 @@ output: html_notebook
 ##### An array is a data structure that can hold multi-dimensional data. In R, the array is objects that can hold two or more than two-dimensional data. For example, in square matrices can contain two rows and two columns and dimension can take five.
 ##### to create an array we will be using array() function. this wil take vector as put to create an array.
 
+more than 2D array can be created with dim parameter. 
+array() (2,3,4) --> this specifies that there 4 arrays of 2,3
+
+##### **Syntex for creating array**
+
+ **array_name <- array(data, dim = ())**
+
 
 ```{r}
+v1 <- c(1,4,5)
+v2 <- c(10,20,30,40,50,60)
+v3 <- array(c(v1,v2), dim = c(3,3,2))
+print(v3)
 
+
+```
+
+**If sequence is not working properly then how to handel this scenario**
+```{r}
+v1 <- c(1,4,5)
+v2 <- c(10,20,30,40,50,60,70,80)
+v3 <- array(c(v1,v2), dim = c(3,3,4))
+print(v3)
+
+```
+---
+Above two outputs are different. Since there were few elements were left as per specified dimesion so next array started from elements which was left in the previous array.
+---
+
+
+
+##### **Naming Convention in Matrix**
+
+```{r}
+col_name <- c("c1", "c2", "c3")
+row_name <- c("r1", "r2", "r3")
+mat_name <- c("mat1", "mat2", "mat3", "mat4")
+
+v4 <- array(c(v1,v2), dim = c(3,3,4), dimnames <- list(row_name, col_name, mat_name) )
+print(v4)
+
+```
+
+##### **if number of elemenent in matrix name and number of matrix in dimensions are not same then above code will give error and array will not be created.**
+
+```{r}
+print(v4[3,,2])
+
+print(v4[3,2,2])
+
+print(v4[,2,2])
+```
+---
+output:
+  pdf_document:
+    highlight: tango
+    
+##### **v4[r,c,m] here r --> row #, c --> column # and m --> matrix numbber**
+
+##### *oprations of matrix*
+---
+
+
+```{r}
+v5 <- v4+v3
+print (v4)
+print(v3)
+print(v5)
 ```
 
 

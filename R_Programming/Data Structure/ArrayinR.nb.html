@@ -251,15 +251,221 @@ $(document).ready(function () {
 </div>
 <div id="to-create-an-array-we-will-be-using-array-function.-this-wil-take-vector-as-put-to-create-an-array." class="section level5">
 <h5>to create an array we will be using array() function. this wil take vector as put to create an array.</h5>
+<p>more than 2D array can be created with dim parameter. array() (2,3,4) –&gt; this specifies that there 4 arrays of 2,3</p>
+</div>
+<div id="syntex-for-creating-array" class="section level5">
+<h5><strong>Syntex for creating array</strong></h5>
+<p><strong>array_name &lt;- array(data, dim = ())</strong></p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudjEgPC0gYygxLDQsNSlcbnYyIDwtIGMoMTAsMjAsMzAsNDAsNTAsNjApXG52MyA8LSBhcnJheShjKHYxLHYyKSwgZGltID0gYygzLDMsMikpXG5wcmludCh2MylcblxuYGBgIn0= -->
+<pre class="r"><code>v1 &lt;- c(1,4,5)
+v2 &lt;- c(10,20,30,40,50,60)
+v3 &lt;- array(c(v1,v2), dim = c(3,3,2))
+print(v3)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLCAsIDFcblxuICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICAxICAgMTAgICA0MFxuWzIsXSAgICA0ICAgMjAgICA1MFxuWzMsXSAgICA1ICAgMzAgICA2MFxuXG4sICwgMlxuXG4gICAgIFssMV0gWywyXSBbLDNdXG5bMSxdICAgIDEgICAxMCAgIDQwXG5bMixdICAgIDQgICAyMCAgIDUwXG5bMyxdICAgIDUgICAzMCAgIDYwXG4ifQ== -->
+<pre><code>, , 1
+
+     [,1] [,2] [,3]
+[1,]    1   10   40
+[2,]    4   20   50
+[3,]    5   30   60
+
+, , 2
+
+     [,1] [,2] [,3]
+[1,]    1   10   40
+[2,]    4   20   50
+[3,]    5   30   60</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><strong>If sequence is not working properly then how to handel this scenario</strong></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudjEgPC0gYygxLDQsNSlcbnYyIDwtIGMoMTAsMjAsMzAsNDAsNTAsNjAsNzAsODApXG52MyA8LSBhcnJheShjKHYxLHYyKSwgZGltID0gYygzLDMsNCkpXG5wcmludCh2MylcblxuYGBgIn0= -->
+<pre class="r"><code>v1 &lt;- c(1,4,5)
+v2 &lt;- c(10,20,30,40,50,60,70,80)
+v3 &lt;- array(c(v1,v2), dim = c(3,3,4))
+print(v3)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<table>
+<tbody>
+<tr class="odd">
+<td>Above two outputs are different. Since there were few elements were left as per specified dimesion so next array started from elements which was left in the previous array.</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="naming-convention-in-matrix" class="section level5">
+<h5><strong>Naming Convention in Matrix</strong></h5>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY29sX25hbWUgPC0gYyhcImMxXCIsIFwiYzJcIiwgXCJjM1wiKVxucm93X25hbWUgPC0gYyhcInIxXCIsIFwicjJcIiwgXCJyM1wiKVxubWF0X25hbWUgPC0gYyhcIm1hdDFcIiwgXCJtYXQyXCIsIFwibWF0M1wiLCBcIm1hdDRcIilcbnY0IDwtIGFycmF5KGModjEsdjIpLCBkaW0gPSBjKDMsMyw0KSwgZGltbmFtZXMgPC0gbGlzdChyb3dfbmFtZSwgY29sX25hbWUsIG1hdF9uYW1lKSApXG5wcmludCh2NClcblxuYGBgIn0= -->
+<pre class="r"><code>col_name &lt;- c(&quot;c1&quot;, &quot;c2&quot;, &quot;c3&quot;)
+row_name &lt;- c(&quot;r1&quot;, &quot;r2&quot;, &quot;r3&quot;)
+mat_name &lt;- c(&quot;mat1&quot;, &quot;mat2&quot;, &quot;mat3&quot;, &quot;mat4&quot;)
+v4 &lt;- array(c(v1,v2), dim = c(3,3,4), dimnames &lt;- list(row_name, col_name, mat_name) )
+print(v4)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLCAsIG1hdDFcblxuICAgYzEgYzIgYzNcbnIxICAxIDEwIDQwXG5yMiAgNCAyMCA1MFxucjMgIDUgMzAgNjBcblxuLCAsIG1hdDJcblxuICAgYzEgYzIgYzNcbnIxIDcwICA0IDIwXG5yMiA4MCAgNSAzMFxucjMgIDEgMTAgNDBcblxuLCAsIG1hdDNcblxuICAgYzEgYzIgYzNcbnIxIDUwIDgwICA1XG5yMiA2MCAgMSAxMFxucjMgNzAgIDQgMjBcblxuLCAsIG1hdDRcblxuICAgYzEgYzIgYzNcbnIxIDMwIDYwICAxXG5yMiA0MCA3MCAgNFxucjMgNTAgODAgIDVcbiJ9 -->
+<pre><code>, , mat1
+
+   c1 c2 c3
+r1  1 10 40
+r2  4 20 50
+r3  5 30 60
+
+, , mat2
+
+   c1 c2 c3
+r1 70  4 20
+r2 80  5 30
+r3  1 10 40
+
+, , mat3
+
+   c1 c2 c3
+r1 50 80  5
+r2 60  1 10
+r3 70  4 20
+
+, , mat4
+
+   c1 c2 c3
+r1 30 60  1
+r2 40 70  4
+r3 50 80  5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="if-number-of-elemenent-in-matrix-name-and-number-of-matrix-in-dimensions-are-not-same-then-above-code-will-give-error-and-array-will-not-be-created." class="section level5">
+<h5><strong>if number of elemenent in matrix name and number of matrix in dimensions are not same then above code will give error and array will not be created.</strong></h5>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQodjRbMywsMl0pXG5cbnByaW50KHY0WzMsMiwyXSlcblxucHJpbnQodjRbLDIsMl0pXG5gYGAifQ== -->
+<pre class="r"><code>print(v4[3,,2])
+
+print(v4[3,2,2])
+
+print(v4[,2,2])</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudjUgPC0gdjQrdjNcbnByaW50ICh2NClcblxuYGBgIn0= -->
+<pre class="r"><code>v5 &lt;- v4+v3
+print (v4)
+</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLCAsIG1hdDFcblxuICAgYzEgYzIgYzNcbnIxICAxIDEwIDQwXG5yMiAgNCAyMCA1MFxucjMgIDUgMzAgNjBcblxuLCAsIG1hdDJcblxuICAgYzEgYzIgYzNcbnIxIDcwICA0IDIwXG5yMiA4MCAgNSAzMFxucjMgIDEgMTAgNDBcblxuLCAsIG1hdDNcblxuICAgYzEgYzIgYzNcbnIxIDUwIDgwICA1XG5yMiA2MCAgMSAxMFxucjMgNzAgIDQgMjBcblxuLCAsIG1hdDRcblxuICAgYzEgYzIgYzNcbnIxIDMwIDYwICAxXG5yMiA0MCA3MCAgNFxucjMgNTAgODAgIDVcbiJ9 -->
+<pre><code>, , mat1
+
+   c1 c2 c3
+r1  1 10 40
+r2  4 20 50
+r3  5 30 60
+
+, , mat2
+
+   c1 c2 c3
+r1 70  4 20
+r2 80  5 30
+r3  1 10 40
+
+, , mat3
+
+   c1 c2 c3
+r1 50 80  5
+r2 60  1 10
+r3 70  4 20
+
+, , mat4
+
+   c1 c2 c3
+r1 30 60  1
+r2 40 70  4
+r3 50 80  5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQodjMpXG5gYGAifQ== -->
+<pre class="r"><code>print(v3)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLCAsIDFcblxuICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgICAxICAgMTAgICA0MFxuWzIsXSAgICA0ICAgMjAgICA1MFxuWzMsXSAgICA1ICAgMzAgICA2MFxuXG4sICwgMlxuXG4gICAgIFssMV0gWywyXSBbLDNdXG5bMSxdICAgNzAgICAgNCAgIDIwXG5bMixdICAgODAgICAgNSAgIDMwXG5bMyxdICAgIDEgICAxMCAgIDQwXG5cbiwgLCAzXG5cbiAgICAgWywxXSBbLDJdIFssM11cblsxLF0gICA1MCAgIDgwICAgIDVcblsyLF0gICA2MCAgICAxICAgMTBcblszLF0gICA3MCAgICA0ICAgMjBcblxuLCAsIDRcblxuICAgICBbLDFdIFssMl0gWywzXVxuWzEsXSAgIDMwICAgNjAgICAgMVxuWzIsXSAgIDQwICAgNzAgICAgNFxuWzMsXSAgIDUwICAgODAgICAgNVxuIn0= -->
+<pre><code>, , 1
+
+     [,1] [,2] [,3]
+[1,]    1   10   40
+[2,]    4   20   50
+[3,]    5   30   60
+
+, , 2
+
+     [,1] [,2] [,3]
+[1,]   70    4   20
+[2,]   80    5   30
+[3,]    1   10   40
+
+, , 3
+
+     [,1] [,2] [,3]
+[1,]   50   80    5
+[2,]   60    1   10
+[3,]   70    4   20
+
+, , 4
+
+     [,1] [,2] [,3]
+[1,]   30   60    1
+[2,]   40   70    4
+[3,]   50   80    5</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucHJpbnQodjUpXG5gYGAifQ== -->
+<pre class="r"><code>print(v5)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiLCAsIG1hdDFcblxuICAgYzEgYzIgIGMzXG5yMSAgMiAyMCAgODBcbnIyICA4IDQwIDEwMFxucjMgMTAgNjAgMTIwXG5cbiwgLCBtYXQyXG5cbiAgICBjMSBjMiBjM1xucjEgMTQwICA4IDQwXG5yMiAxNjAgMTAgNjBcbnIzICAgMiAyMCA4MFxuXG4sICwgbWF0M1xuXG4gICAgYzEgIGMyIGMzXG5yMSAxMDAgMTYwIDEwXG5yMiAxMjAgICAyIDIwXG5yMyAxNDAgICA4IDQwXG5cbiwgLCBtYXQ0XG5cbiAgICBjMSAgYzIgYzNcbnIxICA2MCAxMjAgIDJcbnIyICA4MCAxNDAgIDhcbnIzIDEwMCAxNjAgMTBcbiJ9 -->
+<pre><code>, , mat1
+
+   c1 c2  c3
+r1  2 20  80
+r2  8 40 100
+r3 10 60 120
+
+, , mat2
+
+    c1 c2 c3
+r1 140  8 40
+r2 160 10 60
+r3   2 20 80
+
+, , mat3
+
+    c1  c2 c3
+r1 100 160 10
+r2 120   2 20
+r3 140   8 40
+
+, , mat4
+
+    c1  c2 c3
+r1  60 120  2
+r2  80 140  8
+r3 100 160 10</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFycmF5IGluIFIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMjICoqV2hhdCBpcyBhcnJheSBpbiBSIHByb2dyYW1taW5nPyoqDQoNCiMjIyMjIEFuIGFycmF5IGlzIGEgZGF0YSBzdHJ1Y3R1cmUgdGhhdCBjYW4gaG9sZCBtdWx0aS1kaW1lbnNpb25hbCBkYXRhLiBJbiBSLCB0aGUgYXJyYXkgaXMgb2JqZWN0cyB0aGF0IGNhbiBob2xkIHR3byBvciBtb3JlIHRoYW4gdHdvLWRpbWVuc2lvbmFsIGRhdGEuIEZvciBleGFtcGxlLCBpbiBzcXVhcmUgbWF0cmljZXMgY2FuIGNvbnRhaW4gdHdvIHJvd3MgYW5kIHR3byBjb2x1bW5zIGFuZCBkaW1lbnNpb24gY2FuIHRha2UgZml2ZS4NCiMjIyMjIHRvIGNyZWF0ZSBhbiBhcnJheSB3ZSB3aWxsIGJlIHVzaW5nIGFycmF5KCkgZnVuY3Rpb24uIHRoaXMgd2lsIHRha2UgdmVjdG9yIGFzIHB1dCB0byBjcmVhdGUgYW4gYXJyYXkuDQoNCg0KYGBge3J9DQoNCmBgYA0KDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIkFycmF5IGluIFIgTm90ZWJvb2siDQpvdXRwdXQ6IGh0bWxfbm90ZWJvb2sNCi0tLQ0KDQojIyMjICoqV2hhdCBpcyBhcnJheSBpbiBSIHByb2dyYW1taW5nPyoqDQoNCiMjIyMjIEFuIGFycmF5IGlzIGEgZGF0YSBzdHJ1Y3R1cmUgdGhhdCBjYW4gaG9sZCBtdWx0aS1kaW1lbnNpb25hbCBkYXRhLiBJbiBSLCB0aGUgYXJyYXkgaXMgb2JqZWN0cyB0aGF0IGNhbiBob2xkIHR3byBvciBtb3JlIHRoYW4gdHdvLWRpbWVuc2lvbmFsIGRhdGEuIEZvciBleGFtcGxlLCBpbiBzcXVhcmUgbWF0cmljZXMgY2FuIGNvbnRhaW4gdHdvIHJvd3MgYW5kIHR3byBjb2x1bW5zIGFuZCBkaW1lbnNpb24gY2FuIHRha2UgZml2ZS4NCiMjIyMjIHRvIGNyZWF0ZSBhbiBhcnJheSB3ZSB3aWxsIGJlIHVzaW5nIGFycmF5KCkgZnVuY3Rpb24uIHRoaXMgd2lsIHRha2UgdmVjdG9yIGFzIHB1dCB0byBjcmVhdGUgYW4gYXJyYXkuDQoNCm1vcmUgdGhhbiAyRCBhcnJheSBjYW4gYmUgY3JlYXRlZCB3aXRoIGRpbSBwYXJhbWV0ZXIuIA0KYXJyYXkoKSAoMiwzLDQpIC0tPiB0aGlzIHNwZWNpZmllcyB0aGF0IHRoZXJlIDQgYXJyYXlzIG9mIDIsMw0KDQojIyMjIyAqKlN5bnRleCBmb3IgY3JlYXRpbmcgYXJyYXkqKg0KDQogKiphcnJheV9uYW1lIDwtIGFycmF5KGRhdGEsIGRpbSA9ICgpKSoqDQoNCg0KYGBge3J9DQp2MSA8LSBjKDEsNCw1KQ0KdjIgPC0gYygxMCwyMCwzMCw0MCw1MCw2MCkNCnYzIDwtIGFycmF5KGModjEsdjIpLCBkaW0gPSBjKDMsMywyKSkNCnByaW50KHYzKQ0KDQoNCmBgYA0KDQoqKklmIHNlcXVlbmNlIGlzIG5vdCB3b3JraW5nIHByb3Blcmx5IHRoZW4gaG93IHRvIGhhbmRlbCB0aGlzIHNjZW5hcmlvKioNCmBgYHtyfQ0KdjEgPC0gYygxLDQsNSkNCnYyIDwtIGMoMTAsMjAsMzAsNDAsNTAsNjAsNzAsODApDQp2MyA8LSBhcnJheShjKHYxLHYyKSwgZGltID0gYygzLDMsNCkpDQpwcmludCh2MykNCg0KYGBgDQotLS0NCkFib3ZlIHR3byBvdXRwdXRzIGFyZSBkaWZmZXJlbnQuIFNpbmNlIHRoZXJlIHdlcmUgZmV3IGVsZW1lbnRzIHdlcmUgbGVmdCBhcyBwZXIgc3BlY2lmaWVkIGRpbWVzaW9uIHNvIG5leHQgYXJyYXkgc3RhcnRlZCBmcm9tIGVsZW1lbnRzIHdoaWNoIHdhcyBsZWZ0IGluIHRoZSBwcmV2aW91cyBhcnJheS4NCi0tLQ0KDQoNCg0KIyMjIyMgKipOYW1pbmcgQ29udmVudGlvbiBpbiBNYXRyaXgqKg0KDQpgYGB7cn0NCmNvbF9uYW1lIDwtIGMoImMxIiwgImMyIiwgImMzIikNCnJvd19uYW1lIDwtIGMoInIxIiwgInIyIiwgInIzIikNCm1hdF9uYW1lIDwtIGMoIm1hdDEiLCAibWF0MiIsICJtYXQzIiwgIm1hdDQiKQ0KDQp2NCA8LSBhcnJheShjKHYxLHYyKSwgZGltID0gYygzLDMsNCksIGRpbW5hbWVzIDwtIGxpc3Qocm93X25hbWUsIGNvbF9uYW1lLCBtYXRfbmFtZSkgKQ0KcHJpbnQodjQpDQoNCmBgYA0KDQojIyMjIyAqKmlmIG51bWJlciBvZiBlbGVtZW5lbnQgaW4gbWF0cml4IG5hbWUgYW5kIG51bWJlciBvZiBtYXRyaXggaW4gZGltZW5zaW9ucyBhcmUgbm90IHNhbWUgdGhlbiBhYm92ZSBjb2RlIHdpbGwgZ2l2ZSBlcnJvciBhbmQgYXJyYXkgd2lsbCBub3QgYmUgY3JlYXRlZC4qKg0KDQpgYGB7cn0NCnByaW50KHY0WzMsLDJdKQ0KDQpwcmludCh2NFszLDIsMl0pDQoNCnByaW50KHY0WywyLDJdKQ0KYGBgDQotLS0NCm91dHB1dDoNCiAgcGRmX2RvY3VtZW50Og0KICAgIGhpZ2hsaWdodDogdGFuZ28NCiAgICANCiMjIyMjICoqdjRbcixjLG1dIGhlcmUgciAtLT4gcm93ICMsIGMgLS0+IGNvbHVtbiAjIGFuZCBtIC0tPiBtYXRyaXggbnVtYmJlcioqDQoNCiMjIyMjICpvcHJhdGlvbnMgb2YgbWF0cml4Kg0KLS0tDQoNCg0KYGBge3J9DQp2NSA8LSB2NCt2Mw0KcHJpbnQgKHY0KQ0KcHJpbnQodjMpDQpwcmludCh2NSkNCmBgYA0KDQoNCg==</div>
 
 
 
