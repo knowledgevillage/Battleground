@@ -1,0 +1,70 @@
+---
+title: "Matrix in R"
+output: html_notebook
+---
+
+
+  
+  
+---  
+
+#### *What is Matrix in R?*
+
+
+*A matrix is a two dimensional data set with columns and rows. A column is a vertical representation of data, while a row is a horizontal representation of data. A matrix can be created with the matrix() function. Specify the nrow and ncol parameters to get the amount of rows and columns:*
+
+
+***Create a matrix***
+
+thismatrix <- matrix(data, nrow , ncol, byrow, dim_name)
+
+***Print the matrix***
+
+print(thismatrix)
+
+---
+
+
+
+
+---
+
+
+##### ***what is difference between vector, array and matrix?***
+
+
+
+| Feature            | Vector                                        | Array                                             | Matrix                                          |
+|--------------------|-----------------------------------------------|---------------------------------------------------|-------------------------------------------------|
+| Dimensions         | 1-dimensional                                 | Multi-dimensional (up to 32 dimensions)            | 2-dimensional                                   |
+| Creation           | Created using `c()` function or `seq()` function | Created using `array()` function                 | Created using `matrix()` function              |
+| Elements           | Homogeneous (all elements of the same data type) | Homogeneous or heterogeneous                      | Homogeneous (all elements of the same data type) |
+| Indexing           | Single index (e.g., `my_vector[1]`)           | Multiple indices (e.g., `my_array[1, 2, 3]`)      | Row and column index (e.g., `my_matrix[1, 2]`) |
+| Dimensional Info   | No explicit dimensions (length only)          | Explicitly defined dimensions                    | Implicitly 2-dimensional (rows and columns)    |
+| Examples           | `my_vector <- c(1, 2, 3)`                     | `my_array <- array(1:24, dim = c(2, 3, 4))`      | `my_matrix <- matrix(1:9, nrow = 3, ncol = 3)` |
+| Operations         | Operations are element-wise                   | Operations can be element-wise or across dimensions | Operations are element-wise                    |
+
+In summary, vectors are 1-dimensional collections of homogeneous data, arrays are multi-dimensional collections that can be homogeneous or heterogeneous, and matrices are 2-dimensional collections of homogeneous data. Each structure has its own characteristics and is suited to different types of data and operations in R programming.
+
+
+---
+
+```{r}
+mat <- matrix(c(2:14), nrow = 4, byrow = TRUE)
+mat
+```
+
+---
+
+***If no of elements are not in multiple of nrow then above code wil give error.***
+
+byrow = TRUE --> it will arrange the matrix by row. Lets see if this is made false then how it will genrated
+
+---
+
+
+```{r}
+mat <- matrix(c(2:14), nrow = 4, byrow = Flase)
+mat
+```
+
