@@ -1,0 +1,14 @@
+---
+title: "Array in R Notebook"
+output: html_notebook
+---
+
+#### **What is array in R programming?**
+
+An array is a data structure that can hold multi-dimensional data. In R, the array is objects that can hold two or more than two-dimensional data. For example, in square matrices can contain two rows and two columns and dimension can take five.
+
+```{r}
+
+```
+
+
