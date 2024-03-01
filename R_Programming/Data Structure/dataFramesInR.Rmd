@@ -1,0 +1,34 @@
+---
+title: "DataFrames in R Notebook"
+output: html_notebook
+---
+
+---
+***What is Dataframes ?***
+
+A DataFrame in R is a tabular (i.e., 2-dimensional, rectangular) data structure used to store values of any data type.
+
+Data Frames are data displayed in a format as a table. Data Frames can have different types of data inside it. While the first column can be character, the second and third can be numeric or logical. However, each column should have the same type of data.
+
+Use the data.frame() function to create a data frame.
+
+
+A dataframe is a special case of the list in which each component has equal length. 
+
+
+***Creating A Data Frame***
+
+```{r}
+emp.data <- data.frame(
+  emp_id = c(1:5),
+  emp_name = c("ram", "shyam", "ramu", "kalu", "bhalu"),
+  emp_sal = c(532,456,8654,2466,8654),
+  emp_start_date = as.Date(c("2012-01-01","2013-12-01","2014-08-01","2014-06-01","2015-09-01")),
+  stringsAsFactors = FALSE
+  
+)
+
+print(emp.data)
+
+```
+
