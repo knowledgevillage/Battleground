@@ -1,0 +1,68 @@
+---
+title: "Data Structures Practice Questions Notebook"
+output: html_notebook
+---
+
+---
+
+***Create a vector with the numbers 1 to 10.***
+
+
+
+```{r}
+vec1 <- c(1:10)
+print(vec1)
+
+```
+
+---
+
+
+***Create a matrix with 3 rows and 4 columns filled with random numbers.***
+
+
+```{r}
+mat1 <- matrix(vec1, nrow=3, ncol=4)
+print(mat1)
+```
+
+---
+
+***Create an array with dimensions 2x3x4 filled with zeros.***
+
+```{r}
+arr1 <- array(c(0), dim = c(2,3,4))
+print(arr1)
+```
+
+---
+
+***Write a program to create first 12 Fibonacci numbers. ***
+
+```{r}
+fib_vec <- c(0,1, rep(NA,10))
+
+for (i in 3:12)
+{
+  fib_vec[i] <- fib_vec[i-1] + fib_vec[i-2]
+}
+print(fib_vec)
+
+```
+
+---
+
+***Create a matrix with 4 rows and 3 columns filled with the first 12 Fibonacci numbers.***
+
+```{r}
+fib_matrix <- matrix(nrow = 4, ncol = 3)
+fib_sequence <- numeric(12)
+fib_sequence[1] <- 0
+fib_sequence[2] <- 1
+for (i in 3:12) {
+  fib_sequence[i] <- fib_sequence[i - 1] + fib_sequence[i - 2]
+}
+fib_matrix <- matrix(fib_sequence, nrow = 4, ncol = 3, byrow = TRUE)
+print(fib_matrix)
+```
+
