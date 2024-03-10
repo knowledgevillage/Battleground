@@ -32,3 +32,10 @@ print(emp.data)
 
 ```
 
+---
+
+***Print Structure of Data Frames***
+```{r}
+print(str(emp.data))
+```
+
