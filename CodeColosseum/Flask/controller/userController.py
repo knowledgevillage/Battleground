@@ -1,6 +1,8 @@
 from app import app
+from model.userModel import userModel
 
+obj = userModel()
 
 @app.route("/user/signup")
-def signup():
-    return "This is signup opration"
+def userSignupController():
+    return obj.userSignupModel()
