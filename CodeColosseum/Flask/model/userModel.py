@@ -18,28 +18,28 @@ class userModel():
         result=self.cur.fetchall()
         print(result)
         if len(result)>0:
-            return json.dumps(result)
+            return {"payload":result}
         else:
-            return "No Data Found"
+            return {"message":"No Data Found"}
         
     
     
     def userAddOneModel(self, data):
         self.cur.execute(f"insert into usercontrol(name, email, phone, role, password) VALUES('{data['name']}', '{data['email']}', '{data['phone']}', '{data['role']}', '{data['password']}')")
         #print(data)
-        return "User created successfully"
+        return {"message":"User created successfully"}
     
 
     def userUpdateModel(self, data):
         self.cur.execute(f"update usercontrol set name='{data['name']}', email='{data['email']}' , phone='{data['phone']}' , role='{data['role']}' , password='{data['password']}' where id={data['id']} ")
         if self.cur.rowcount>0:
-            return "User updated successfully"
+            return {"message":"User updated successfully"}
         else:
-            return "No thing to update"
+            return {"message":"No thing to update"}
             
     def userDeleteModel(self, data):
         self.cur.execute(f"Delete from usercontrol where id ={data} ")
         if self.cur.rowcount>0:
-            return "User Deleted successfully"
+            return {"message":"User Deleted successfully"}
         else:
-            return "No thing to delete"
+            return {"message":"No thing to delete"}
