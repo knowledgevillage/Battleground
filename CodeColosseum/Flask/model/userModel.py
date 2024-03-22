@@ -15,11 +15,13 @@ class userModel():
         
 
     def userGetAllModel(self):
-        self.cur.execute("select name, email, phone, role, password from usercontrol")
+        self.cur.execute("select * from usercontrol")
         result=self.cur.fetchall()
         print(result)
         if len(result)>0:
-            return make_response({"payload":result},200)
+            res=make_response({"payload":result},200)
+            res.headers['Access-Control-Allow-Origin']="*"
+            return res
         else:
             return make_response({"message":"No Data Found"},204)
         
@@ -44,3 +46,16 @@ class userModel():
             return make_response({"message":"User Deleted successfully"},201)
         else:
             return make_response({"message":"No thing to delete"},202)
+        
+
+    def userPatchModel (self,data, id):
+        qry="update usercontrol set "
+        for key in data:
+            qry+= f"{key}='{data[key]}',"
+        qry=qry[:-1]
+        qry+=f" where id={id}"
+        self.cur.execute(qry)
+        if self.cur.rowcount>0:
+            return make_response({"message":"User updated successfully"},201)
+        else:
+            return make_response({"message":"No thing to update"},202)

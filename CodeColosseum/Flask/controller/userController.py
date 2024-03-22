@@ -22,3 +22,7 @@ def userUpdateController():
 @app.route("/user/delete/<id>", methods=["DELETE"])
 def userDeleteController(id):
     return obj.userDeleteModel(id)
+
+@app.route("/user/patch/<id>", methods=["PATCH"])
+def userPatchController(id):
+    return obj.userPatchModel(request.form,id)
